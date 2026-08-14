@@ -3,427 +3,333 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sabor & Bienestar · Recetas, ebooks y cursos digitales</title>
+<title>Crea & Encanta · Cursos, ebooks y manualidades</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Caveat:wght@500;600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Caveat:wght@500;600&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --cream: #F6F0E4;
-    --cream-deep: #EFE6D2;
-    --ink: #33422A;
-    --sage: #6E7F4C;
-    --sage-deep: #4A5B32;
-    --coral: #E17A57;
-    --blush: #F3DCC9;
-    --paper: #FFFDF8;
-    --line: rgba(51,66,42,0.14);
+    --blush: #FBF2F5;
+    --paper: #FFFFFF;
+    --ink: #3D1F44;
+    --violet: #7A4C8C;
+    --violet-deep: #5A3567;
+    --violet-dark: #3D1F44;
+    --gold: #D9A441;
+    --pink: #F1CFE0;
+    --green: #3E8E5B;
+    --line: rgba(61,31,68,0.13);
   }
-
   *{box-sizing:border-box; margin:0; padding:0;}
-
   html{scroll-behavior:smooth;}
-
   body{
-    background: var(--cream);
+    background: var(--blush);
     color: var(--ink);
     font-family:'Jost', sans-serif;
     -webkit-font-smoothing: antialiased;
     overflow-x:hidden;
   }
-
   @media (prefers-reduced-motion: reduce){
     *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
   }
-
   a{color:inherit;}
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 28px; }
 
-  .wrap{
-    max-width: 1080px;
-    margin:0 auto;
-    padding: 0 28px;
-  }
+  .sparkle-field{ position:absolute; inset:0; overflow:hidden; pointer-events:none; }
+  .sparkle-field svg{ position:absolute; }
 
-  /* ---------- decorative background leaves ---------- */
-  .leaf-field{
-    position:absolute; inset:0; overflow:hidden; pointer-events:none;
-  }
-  .leaf-field svg{position:absolute; opacity:0.5;}
-
-  /* ---------- header / hero ---------- */
-  header{
-    position:relative;
-    padding: 68px 0 54px;
-    text-align:center;
-    overflow:hidden;
-  }
-
-  .mark{
-    width:74px; height:74px;
-    margin: 0 auto 18px;
-    display:block;
-  }
-
+  header{ position:relative; padding: 70px 0 50px; text-align:center; overflow:hidden; }
+  .mark{ width:64px; height:64px; margin:0 auto 16px; display:block; }
   .brand-title{
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    font-size: clamp(2.6rem, 8vw, 4.6rem);
-    line-height: 1.02;
-    color: var(--sage-deep);
-    letter-spacing: -0.01em;
+    font-family:'Fraunces', serif; font-weight:600;
+    font-size: clamp(2.5rem, 7.5vw, 4.3rem); line-height:1.02;
+    color: var(--violet-deep); letter-spacing: -0.01em;
   }
-  .brand-title .amp{
-    color: var(--coral);
-    font-style: italic;
-    font-weight: 500;
-  }
-
+  .brand-title .amp{ color: var(--gold); font-style: italic; font-weight:500; }
   .tagline{
-    font-family:'Caveat', cursive;
-    font-size: clamp(1.5rem, 3.4vw, 2.05rem);
-    color: var(--coral);
-    margin-top: 6px;
+    font-size: clamp(1rem, 2.2vw, 1.15rem); opacity: 0.72;
+    max-width: 520px; margin: 14px auto 0; line-height: 1.5;
   }
-
-  .pillars{
-    display:flex;
-    justify-content:center;
-    gap: 34px;
-    flex-wrap: wrap;
-    margin-top: 46px;
-  }
-  .pillar{
-    width: 168px;
-    text-align:center;
-  }
+  .pillars{ display:flex; justify-content:center; gap:34px; flex-wrap:wrap; margin-top:46px; }
+  .pillar{ width:168px; text-align:center; }
   .pillar .icon{
-    width: 54px; height:54px;
-    border-radius:50%;
+    width:54px; height:54px; border-radius:50%;
     display:flex; align-items:center; justify-content:center;
-    margin: 0 auto 12px;
-    font-size: 1.35rem;
+    margin: 0 auto 12px; font-size:1.35rem;
   }
-  .pillar:nth-child(odd) .icon{ background: var(--blush); }
-  .pillar:nth-child(even) .icon{ background: #DCE4C6; }
+  .pillar:nth-child(odd) .icon{ background: var(--pink); }
+  .pillar:nth-child(even) .icon{ background: #E8DDF2; }
   .pillar h3{
-    font-family:'Jost', sans-serif;
-    font-size: 0.86rem;
-    font-weight:600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--sage-deep);
+    font-size:0.86rem; font-weight:600; letter-spacing:0.06em;
+    text-transform:uppercase; color: var(--violet-deep);
   }
-  .pillar p{
-    font-size: 0.86rem;
-    color: var(--ink);
-    opacity: 0.72;
-    margin-top: 4px;
-    line-height:1.35;
-  }
+  .pillar p{ font-size:0.86rem; opacity:0.7; margin-top:4px; line-height:1.35; }
 
-  /* ---------- brushstroke banner (signature element) ---------- */
-  .brushstroke{
-    position:relative;
-    margin: 54px auto 0;
-    max-width: 760px;
-    padding: 22px 20px;
-    text-align:center;
+  .banner{ position:relative; margin: 54px auto 0; max-width:720px; padding: 20px; text-align:center; }
+  .banner svg{ position:absolute; inset:0; width:100%; height:100%; z-index:0; }
+  .banner span{
+    position:relative; z-index:1; font-family:'Caveat', cursive;
+    font-size: clamp(1.4rem, 3.4vw, 1.9rem); color: var(--paper);
   }
-  .brushstroke svg{
-    position:absolute; inset:0; width:100%; height:100%; z-index:0;
-  }
-  .brushstroke span{
-    position:relative; z-index:1;
-    font-family:'Fraunces', serif;
-    font-style: italic;
-    font-size: clamp(1.1rem, 3vw, 1.5rem);
-    color: var(--paper);
-    letter-spacing: 0.02em;
-  }
-  .brushstroke .dot{
-    color: var(--coral);
-    margin: 0 10px;
-    font-style: normal;
-  }
+  .banner .dot{ color: var(--gold); margin:0 8px; }
 
-  /* ---------- courses section ---------- */
-  .courses{
-    padding: 70px 0 40px;
-  }
-  .section-head{
-    text-align:center;
-    margin-bottom: 44px;
-  }
+  /* ---------- courses ---------- */
+  .courses{ padding: 68px 0 60px; }
+  .section-head{ text-align:center; margin-bottom:44px; }
   .eyebrow{
-    font-family:'Jost', sans-serif;
-    font-size: 0.78rem;
-    font-weight:600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--coral);
+    font-size:0.78rem; font-weight:700; letter-spacing:0.16em;
+    text-transform:uppercase; color: var(--gold);
   }
   .section-head h2{
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    font-size: clamp(1.7rem, 4vw, 2.5rem);
-    color: var(--sage-deep);
-    margin-top: 8px;
+    font-family:'Fraunces', serif; font-weight:600;
+    font-size: clamp(1.7rem, 4vw, 2.4rem); color: var(--violet-deep); margin-top:8px;
   }
-  .section-head p{
-    margin-top: 10px;
-    color: var(--ink);
-    opacity: 0.7;
-    max-width: 460px;
-    margin-left:auto; margin-right:auto;
-    font-size: 0.98rem;
+  .section-head p{ margin-top:10px; opacity:0.68; max-width:460px; margin-left:auto; margin-right:auto; font-size:0.98rem; }
+
+  .course-list{ display:flex; flex-direction:column; gap:18px; }
+
+  .course{
+    background: var(--paper); border-radius:20px; overflow:hidden;
+    border:1px solid var(--line);
   }
 
-  .course-grid{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 26px;
+  .course-summary{
+    display:flex; align-items:center; gap:18px;
+    padding: 18px 22px; cursor:pointer; user-select:none;
+    background:none; border:none; width:100%; text-align:left; font:inherit; color:inherit;
   }
+  .course-summary:focus-visible{ outline: 3px solid var(--gold); outline-offset: -3px; }
+  .course-summary .thumb{
+    width:64px; height:64px; border-radius:14px; flex-shrink:0;
+    background: linear-gradient(135deg, var(--pink), #E8DDF2);
+    display:flex; align-items:center; justify-content:center; font-size:1.7rem;
+  }
+  .course-summary .info{ flex:1; min-width:0; }
+  .course-summary h3{ font-family:'Fraunces', serif; font-weight:600; font-size:1.12rem; color: var(--violet-deep); }
+  .course-summary .price-line{ font-size:0.86rem; margin-top:3px; }
+  .course-summary .price{ font-weight:600; color: var(--gold); }
+  .course-summary .price-old{ text-decoration:line-through; opacity:0.45; margin-right:6px; }
+  .course-summary .toggle-label{
+    font-size:0.84rem; font-weight:600; color: var(--violet-deep);
+    display:flex; align-items:center; gap:6px; flex-shrink:0;
+  }
+  .course-summary .chevron{ transition: transform 0.25s ease; }
+  .course.open .chevron{ transform: rotate(180deg); }
 
-  .course-card{
-    background: var(--paper);
-    border-radius: 18px;
-    overflow:hidden;
-    border: 1px solid var(--line);
-    display:flex;
-    flex-direction:column;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  .course-panel{
+    max-height:0; overflow:hidden;
+    transition: max-height 0.35s ease;
+    border-top: 1px solid var(--line);
   }
-  .course-card:hover{
-    transform: translateY(-4px);
-    box-shadow: 0 18px 34px -18px rgba(74,91,50,0.35);
-  }
-  .course-card .thumb{
-    aspect-ratio: 4/3;
-    background: linear-gradient(135deg, var(--blush), #DCE4C6);
-    display:flex; align-items:center; justify-content:center;
-    font-size: 2rem;
-  }
-  .course-card .body{
-    padding: 20px 20px 22px;
-    display:flex;
-    flex-direction:column;
-    flex:1;
-  }
-  .course-card h3{
-    font-family:'Fraunces', serif;
-    font-weight:600;
-    font-size: 1.2rem;
-    color: var(--sage-deep);
-  }
-  .course-card p{
-    font-size: 0.9rem;
-    color: var(--ink);
-    opacity:0.72;
-    margin-top: 8px;
-    line-height: 1.45;
-    flex:1;
-  }
-  .course-card .meta{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    margin-top: 16px;
-  }
-  .course-card .price{
-    font-family:'Jost', sans-serif;
-    font-weight:600;
-    color: var(--coral);
-    font-size: 1rem;
-  }
-  .btn{
-    display:inline-block;
-    font-family:'Jost', sans-serif;
-    font-weight:600;
-    font-size: 0.84rem;
-    letter-spacing: 0.02em;
-    color: var(--paper);
-    background: var(--sage-deep);
-    padding: 10px 20px;
-    border-radius: 999px;
-    text-decoration:none;
-    border: none;
-    cursor:pointer;
-    transition: background 0.2s ease;
-  }
-  .btn:hover{ background: var(--coral); }
-  .btn:focus-visible{ outline: 3px solid var(--coral); outline-offset: 2px; }
+  .course.open .course-panel{ border-top: 1px solid var(--line); }
 
-  /* empty state */
-  .empty-state{
-    grid-column: 1 / -1;
-    text-align:center;
-    padding: 46px 24px;
-    border: 1.5px dashed var(--line);
-    border-radius: 18px;
-    background: var(--paper);
-  }
-  .empty-state .icon{ font-size: 1.8rem; margin-bottom: 10px; }
-  .empty-state h3{
-    font-family:'Fraunces', serif;
-    color: var(--sage-deep);
-    font-size: 1.15rem;
-  }
-  .empty-state p{
-    margin-top: 6px;
-    font-size: 0.92rem;
-    color: var(--ink);
-    opacity: 0.68;
-  }
+  .course-panel-inner{ padding: 24px 22px 30px; }
+  .panel-desc{ font-size:0.95rem; line-height:1.6; opacity:0.82; max-width: 620px; }
 
-  /* ---------- footer ---------- */
-  footer{
-    margin-top: 60px;
-    padding: 40px 0 46px;
-    background: var(--sage-deep);
-    color: var(--cream);
-    text-align:center;
+  .panel-includes{ margin-top: 22px; }
+  .panel-includes h4{
+    font-size:0.78rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
+    color: var(--violet-deep); margin-bottom: 12px;
   }
-  footer .brand-title{
-    font-size: 1.6rem;
-    color: var(--cream);
+  .include-item{
+    display:flex; align-items:center; gap:12px;
+    padding: 10px 0; font-size:0.92rem;
+    border-bottom: 1px solid var(--line);
   }
-  footer .amp{ color: var(--coral); }
+  .include-item:last-child{ border-bottom:none; }
+  .include-item .dot{ width:7px; height:7px; border-radius:50%; background: var(--gold); flex-shrink:0; }
+
+  .panel-cta{
+    margin-top: 26px; display:flex; align-items:center; gap:20px; flex-wrap:wrap;
+    background: var(--blush); border-radius:16px; padding: 20px;
+  }
+  .panel-cta .price-big-wrap{ display:flex; flex-direction:column; }
+  .panel-cta .price-old-big{ font-size:0.9rem; text-decoration:line-through; opacity:0.5; }
+  .panel-cta .price-big{ font-family:'Fraunces', serif; font-weight:600; font-size:1.7rem; color: var(--green); }
+  .panel-cta .note{ font-size:0.78rem; opacity:0.6; margin-top:2px; }
+
+  .buy-btn{
+    margin-left:auto;
+    display:inline-block; font-weight:700; font-size:1rem;
+    color: var(--violet-dark);
+    background: linear-gradient(180deg, #FFD873, var(--gold));
+    padding: 14px 32px; border-radius: 999px; text-decoration:none;
+    box-shadow: 0 12px 26px -12px rgba(217,164,65,0.6);
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+  .buy-btn:hover{ filter: brightness(1.05); }
+  .buy-btn:focus-visible{ outline: 3px solid var(--violet-deep); outline-offset:3px; animation:none; }
+  @keyframes pulse{ 0%,100%{ transform: scale(1);} 50%{ transform: scale(1.05);} }
+
+  .panel-gallery{ margin-top:26px; display:grid; grid-template-columns: repeat(auto-fit, minmax(110px,1fr)); gap:12px; }
+  .panel-gallery .g{ background: var(--blush); border-radius:14px; padding:16px 8px; text-align:center; }
+  .panel-gallery .g .icon{ font-size:1.4rem; }
+  .panel-gallery .g p{ margin-top:6px; font-size:0.78rem; font-weight:500; color: var(--violet-deep); }
+
+  footer{ margin-top:0; padding:40px 0 46px; background: var(--violet-deep); color: var(--blush); text-align:center; }
+  footer .brand-title{ font-size:1.5rem; color: var(--blush); }
+  footer .amp{ color: var(--gold); }
   footer .fb-link{
-    display:inline-flex;
-    align-items:center;
-    gap: 8px;
-    margin-top: 20px;
-    font-size: 0.92rem;
-    font-weight:500;
-    color: var(--cream);
-    text-decoration:none;
-    border-bottom: 1px solid rgba(246,240,228,0.4);
-    padding-bottom: 2px;
-    transition: border-color 0.2s ease;
+    display:inline-flex; align-items:center; gap:8px; margin-top:20px; font-size:0.92rem; font-weight:500;
+    color: var(--blush); text-decoration:none; border-bottom:1px solid rgba(251,242,245,0.4); padding-bottom:2px;
   }
-  .fb-link:hover{ border-color: var(--coral); }
-  footer .fine{
-    margin-top: 26px;
-    font-size: 0.78rem;
-    opacity: 0.55;
-  }
+  footer .fb-link:hover{ border-color: var(--gold); }
+  footer .fine{ margin-top:26px; font-size:0.78rem; opacity:0.55; }
 
-  @media (max-width: 520px){
-    .pillars{ gap: 20px 26px; }
-    .pillar{ width: 128px; }
+  @media (max-width: 560px){
+    .pillars{ gap:20px 26px; } .pillar{ width:128px; }
+    .course-summary{ flex-wrap:wrap; }
+    .buy-btn{ margin-left:0; width:100%; text-align:center; }
   }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="leaf-field" aria-hidden="true">
-    <svg width="220" height="220" style="top:-40px; left:-60px;" viewBox="0 0 200 200"><path d="M20 100 Q 60 20 140 30 Q 100 60 90 110 Q 70 70 20 100Z" fill="#8CA06E"/></svg>
-    <svg width="180" height="180" style="top:-30px; right:-50px;" viewBox="0 0 200 200"><path d="M180 100 Q 140 20 60 30 Q 100 60 110 110 Q 130 70 180 100Z" fill="#E17A57" opacity="0.55"/></svg>
+  <div class="sparkle-field" aria-hidden="true">
+    <svg width="18" height="18" style="top:60px; left:12%;" viewBox="0 0 20 20"><path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8Z" fill="#D9A441" opacity="0.7"/></svg>
+    <svg width="14" height="14" style="top:120px; right:10%;" viewBox="0 0 20 20"><path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8Z" fill="#7A4C8C" opacity="0.5"/></svg>
+    <svg width="10" height="10" style="top:30px; right:22%;" viewBox="0 0 20 20"><path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8Z" fill="#D9A441" opacity="0.6"/></svg>
   </div>
-
   <div class="wrap" style="position:relative;">
     <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
-      <path d="M20 45 C20 65 35 78 50 78 C65 78 80 65 80 45 Z" fill="#6E7F4C"/>
-      <path d="M50 20 C44 30 44 40 50 46 C56 40 56 30 50 20Z" fill="#E17A57"/>
-      <path d="M35 30 Q40 22 48 24 Q44 32 35 30Z" fill="#4A5B32"/>
-      <path d="M65 30 Q60 22 52 24 Q56 32 65 30Z" fill="#4A5B32"/>
+      <circle cx="50" cy="50" r="34" fill="#F1CFE0"/>
+      <path d="M50 24 L55 42 L74 46 L55 50 L50 68 L45 50 L26 46 L45 42Z" fill="#D9A441"/>
     </svg>
-
-    <h1 class="brand-title">Sabor <span class="amp">&amp;</span> Bienestar</h1>
-    <p class="tagline">Comer rico, aprender y cuidar de ti.</p>
-
+    <h1 class="brand-title">Crea <span class="amp">&amp;</span> Encanta</h1>
+    <p class="tagline">Un espacio para aprender, crear y transformar tus ideas en proyectos hechos por tus propias manos.</p>
     <div class="pillars">
-      <div class="pillar">
-        <div class="icon">🥣</div>
-        <h3>Recetas</h3>
-        <p>Fáciles, saludables y deliciosas</p>
-      </div>
-      <div class="pillar">
-        <div class="icon">📖</div>
-        <h3>Ebooks</h3>
-        <p>Recetarios y guías prácticas</p>
-      </div>
-      <div class="pillar">
-        <div class="icon">💻</div>
-        <h3>Cursos digitales</h3>
-        <p>Aprendé a tu ritmo desde casa</p>
-      </div>
-      <div class="pillar">
-        <div class="icon">🌿</div>
-        <h3>Bienestar</h3>
-        <p>Hábitos y consejos para tu día a día</p>
-      </div>
+      <div class="pillar"><div class="icon">💎</div><h3>Resina</h3><p>Proyectos creativos</p></div>
+      <div class="pillar"><div class="icon">🎨</div><h3>Artesanales</h3><p>Y manualidades</p></div>
+      <div class="pillar"><div class="icon">📚</div><h3>Ebooks</h3><p>Paso a paso</p></div>
+      <div class="pillar"><div class="icon">🎓</div><h3>Cursos</h3><p>Digitales</p></div>
     </div>
-
-    <div class="brushstroke">
-      <svg viewBox="0 0 760 90" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M8,45 C40,10 120,8 200,20 C320,38 420,5 540,15 C630,22 700,10 752,42 C700,75 630,62 540,72 C420,85 320,58 200,68 C120,78 40,80 8,45Z" fill="#6E7F4C"/>
+    <div class="banner">
+      <svg viewBox="0 0 720 84" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M8,42 C40,10 120,8 200,18 C320,34 420,6 540,14 C630,20 670,10 712,40 C670,70 630,60 540,68 C420,80 320,52 200,64 C120,76 40,74 8,42Z" fill="#7A4C8C"/>
       </svg>
-      <span>Aprendé <i class="dot">•</i> Cociná <i class="dot">•</i> Disfrutá <i class="dot">♥</i></span>
+      <span>Aprende <i class="dot">•</i> Crea <i class="dot">•</i> Hazlo realidad <i class="dot">✨</i></span>
     </div>
   </div>
 </header>
 
 <main class="courses wrap" id="cursos">
   <div class="section-head">
-    <div class="eyebrow">Cursos y recetarios</div>
-    <h2>Elegí lo que querés aprender hoy</h2>
-    <p>Tocá "Ver más" para conocer todos los detalles de cada curso.</p>
+    <div class="eyebrow">Cursos y ebooks</div>
+    <h2>Elegí tu próximo proyecto</h2>
+    <p>Tocá un curso para ver todos los detalles y comprarlo.</p>
   </div>
 
-  <div class="course-grid">
-    <!--
-      Cuando tengas el link de Hotmart de un curso, agregá una tarjeta así:
+  <div class="course-list">
 
-      <div class="course-card">
-        <div class="thumb">🥗</div>
-        <div class="body">
-          <h3>Nombre del curso</h3>
-          <p>Descripción corta del curso, en una o dos líneas.</p>
-          <div class="meta">
-            <span class="price">$9.99 USD</span>
-            <a class="btn" href="LINK_DE_HOTMART" target="_blank" rel="noopener">Ver más</a>
+    <!-- ============ CURSO: RESINA ============ -->
+    <div class="course" id="curso-resina">
+      <button class="course-summary" onclick="toggleCourse('curso-resina')">
+        <div class="thumb">💎</div>
+        <div class="info">
+          <h3>Diseña y Crea con Resina</h3>
+          <div class="price-line"><span class="price-old">$74.00</span><span class="price">$37.00 USD</span></div>
+        </div>
+        <span class="toggle-label">Ver más <svg class="chevron" width="14" height="14" viewBox="0 0 20 20"><path d="M5 8 L10 13 L15 8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <div class="course-panel">
+        <div class="course-panel-inner">
+          <p class="panel-desc">Curso online paso a paso para aprender a crear tus propios proyectos en resina desde cero, sin importar tu nivel de experiencia. Acceso de por vida.</p>
+          <div class="panel-gallery">
+            <div class="g"><div class="icon">💍</div><p>Joyería</p></div>
+            <div class="g"><div class="icon">🖼️</div><p>Cuadros y decor</p></div>
+            <div class="g"><div class="icon">🔑</div><p>Llaveros</p></div>
+            <div class="g"><div class="icon">🪞</div><p>Posavasos</p></div>
+            <div class="g"><div class="icon">🕯️</div><p>Piezas artesanales</p></div>
+            <div class="g"><div class="icon">🎁</div><p>Regalos</p></div>
+          </div>
+          <div class="panel-cta">
+            <div class="price-big-wrap">
+              <span class="price-old-big">$74.00</span>
+              <span class="price-big">$37.00</span>
+              <span class="note">Único pago · Acceso de por vida</span>
+            </div>
+            <a class="buy-btn" href="https://go.hotmart.com/K106909631W?ap=42a4" target="_blank" rel="noopener">Comprar Ahora</a>
           </div>
         </div>
       </div>
-    -->
-    <div class="course-card">
-      <div class="thumb">🥑</div>
-      <div class="body">
-        <h3>120 Recetas + Plan de 21 días</h3>
-        <p>Recetario de 120 recetas para bajar de peso y desinflamar, más un plan de alimentación de 21 días sin arroz ni azúcar.</p>
-        <div class="meta">
-          <span class="price">$9.99 USD</span>
-          <a class="btn" href="https://go.hotmart.com/F106905411D" target="_blank" rel="noopener">Ver más</a>
+    </div>
+
+    <!-- ============ CURSO: JABONES ============ -->
+    <div class="course" id="curso-jabones">
+      <button class="course-summary" onclick="toggleCourse('curso-jabones')">
+        <div class="thumb">🧼</div>
+        <div class="info">
+          <h3>Jabones DIY: Pack 7x1</h3>
+          <div class="price-line"><span class="price">$21.99 USD</span></div>
+        </div>
+        <span class="toggle-label">Ver más <svg class="chevron" width="14" height="14" viewBox="0 0 20 20"><path d="M5 8 L10 13 L15 8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+      <div class="course-panel">
+        <div class="course-panel-inner">
+          <p class="panel-desc">Aprendé a elaborar tus propios jabones artesanales desde cero, sin experiencia previa, con ingredientes fáciles de conseguir.</p>
+          <div class="panel-includes">
+            <h4>Incluye</h4>
+            <div class="include-item"><span class="dot"></span>Jabones DIY: De Principiante a Experto (curso principal)</div>
+            <div class="include-item"><span class="dot"></span>Bombas de Baño y Sales</div>
+            <div class="include-item"><span class="dot"></span>Aromaterapia y Aceites Esenciales</div>
+            <div class="include-item"><span class="dot"></span>Cómo Hacer Aceites de Masaje</div>
+            <div class="include-item"><span class="dot"></span>Elaborá tus Lip Balm y Cacaos</div>
+            <div class="include-item"><span class="dot"></span>Creá tus Perfumes desde Casa</div>
+          </div>
+          <div class="panel-cta">
+            <div class="price-big-wrap">
+              <span class="price-big">$21.99</span>
+              <span class="note">Único pago · Acceso de por vida</span>
+            </div>
+            <a class="buy-btn" href="https://go.hotmart.com/K106909631W?ap=8edd" target="_blank" rel="noopener">Comprar Ahora</a>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="course-card">
-      <div class="thumb">🍎</div>
-      <div class="body">
-        <h3>200 Recetas para diabéticos</h3>
-        <p>Recetario pensado para comer rico cuidando el azúcar en sangre, con opciones fáciles para el día a día.</p>
-        <div class="meta">
-          <span class="price">$16.99 USD</span>
-          <a class="btn" href="https://go.hotmart.com/X107140139B" target="_blank" rel="noopener">Ver más</a>
-        </div>
-      </div>
-    </div>
+    <!--
+      PARA AGREGAR UN CURSO NUEVO: copiá uno de los bloques <div class="course" ...> de arriba completo,
+      pegalo antes de este comentario, cambiá el id (curso-nombre), el emoji, el título, el precio,
+      la descripción, los ítems de "Incluye" o la galería, y el link de "Comprar Ahora".
+    -->
+
   </div>
 </main>
 
 <footer>
   <div class="wrap">
-    <h2 class="brand-title">Sabor <span class="amp">&amp;</span> Bienestar</h2>
-    <a class="fb-link" href="https://web.facebook.com/profile.php?id=61593248309226" target="_blank" rel="noopener">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94Z"/></svg>
-      Seguinos en Facebook
-    </a>
-    <p class="fine">© 2026 Sabor &amp; Bienestar · Comer rico, aprender y cuidar de ti.</p>
+    <h2 class="brand-title">Crea <span class="amp">&amp;</span> Encanta</h2>
+    <a class="fb-link" href="https://www.facebook.com/profile.php?id=61593414683445" target="_blank" rel="noopener">Seguinos en Facebook</a>
+    <p class="fine">© 2026 Crea &amp; Encanta · Aprende. Crea. Hazlo realidad.</p>
   </div>
 </footer>
+
+<script>
+  function toggleCourse(id){
+    var el = document.getElementById(id);
+    var panel = el.querySelector('.course-panel');
+    var isOpen = el.classList.contains('open');
+
+    document.querySelectorAll('.course.open').forEach(function(c){
+      if(c.id !== id){
+        c.classList.remove('open');
+        c.querySelector('.course-panel').style.maxHeight = null;
+      }
+    });
+
+    if(isOpen){
+      el.classList.remove('open');
+      panel.style.maxHeight = null;
+    } else {
+      el.classList.add('open');
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+      el.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  }
+</script>
+
+<script data-goatcounter="https://creayencanta.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 </body>
 </html>
